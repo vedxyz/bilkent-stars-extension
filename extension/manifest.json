@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Bilkent STARS Enhancer",
+  "description": "Helps with STARS-related inconveniences",
+  "version": "1.0.0",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://stars.bilkent.edu.tr/accounts/site/verifyEmail"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ],
+  "options_ui": {
+    "page": "options/index.html",
+    "browser_style": true
+  },
+  "permissions": ["https://srs-2fa-code-obtain.azurewebsites.net/api/*", "storage"]
+}

@@ -1,0 +1,10 @@
+input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+body, html {
+  background: #222;
+  color: #eee;
+}
+
