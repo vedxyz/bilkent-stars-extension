@@ -1,3 +1,6 @@
+web-ext-artifacts
+*.key
+
 # Logs
 logs
 *.log
