@@ -1,6 +1,13 @@
-input {
+form.browser-style input {
   display: block;
-  margin-bottom: 10px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.input-container {
+  display: block;
+  width: 50%;
+  margin: 5px auto 20px auto;
 }
 
 body, html {
@@ -8,3 +15,43 @@ body, html {
   color: #eee;
 }
 
+form {
+  padding: 20px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  width: 500px;
+  text-align: center;
+  border: 1px solid rgba(238, 238, 238, 0.363);
+  background-color: rgb(53, 53, 53);
+}
+
+form.browser-style button {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+#auth-status {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#auth-status-light {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 10px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+#auth-status-light + p {
+  display: inline;
+  vertical-align: middle;
+  font-size: 17px;
+}

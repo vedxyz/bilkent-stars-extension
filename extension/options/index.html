@@ -2,16 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link href="chrome://browser/content/extension.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <form class="browser-style">
-      <label for="email">Email</label>
-      <input type="text" id="email"/>
-      <label for="password">Password</label>
-      <input type="password" id="password"/>
-      <label for="boxname">Box name</label>
-      <input type="text" id="boxname"/>
+      <div id="auth-status">
+        <div id="auth-status-light"></div>
+        <p>No credentials saved</p>
+      </div>
+      <div class="input-container browser-style">
+        <label class="browser-style-label" for="email">Email</label>
+        <input type="text" id="email"/>
+      </div>
+      <div class="input-container browser-style">
+        <label for="password">Password</label>
+        <input type="password" id="password"/>
+      </div>
+      <div class="input-container browser-style">
+        <label for="boxname">Box name</label>
+        <input type="text" id="boxname"/>
+      </div>
       <button class="browser-style" type="submit">Save</button>
     </form>
     <script src="script.js"></script>

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Bilkent STARS Enhancer",
   "description": "Helps with STARS-related inconveniences",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "icons": {
     "64": "icons/icon.png"
   },
@@ -12,13 +12,36 @@
         "https://stars.bilkent.edu.tr/accounts/site/verifyEmail"
       ],
       "js": [
-        "content_script.js"
+        "srs_login_2fa.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://webmail.bilkent.edu.tr/",
+        "https://stars.bilkent.edu.tr/accounts/login/*"
+      ],
+      "js": [
+        "srs_login_form.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://stars.bilkent.edu.tr/homepage/plain_offerings"
+      ],
+      "js": [
+        "plain_offerings.js"
       ]
     }
   ],
   "options_ui": {
     "page": "options/index.html",
-    "browser_style": true
+    "browser_style": true,
+    "open_in_tab": true
   },
-  "permissions": ["https://srs-2fa-code-obtain.azurewebsites.net/api/*", "storage"]
+  "permissions": ["https://bilkent-stars-ext.azurewebsites.net/api/*", "storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "update_url": "https://vedat.xyz/bilkent-stars-extension/updates.json"
+    }
+  }
 }
