@@ -1,5 +1,6 @@
 import { JSDOM } from "jsdom";
 import fetch from "node-fetch";
+import { decryptCredentials } from "./credentialresolver.mjs";
 
 const getLoginTokens = async () => {
     const page = await fetch("https://webmail.bilkent.edu.tr/");
@@ -63,13 +64,15 @@ export default async function (context, req) {
         context.log('JavaScript HTTP trigger function processed a request.');
         const boxname = req.query.boxname;
         
-        const credentials = await login(req.query.email, req.query.pw);
+        const decrypted = await decryptCredentials(req.query.credentials, req.query.iv);
+        const credentials = await login(decrypted.email, decrypted.password);
         
         context.res = {
             body: await getMail(credentials, boxname, await getLatestUid(credentials, boxname)),
             contentType: "application/json",
         };
     } catch (error) {
+        console.error(error);
         context.res = {
             status: 500,
         };
