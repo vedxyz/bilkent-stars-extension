@@ -1,0 +1,13 @@
+{
+  "name": "bilkent-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "jsdom": "^17.0.0",
+    "node-fetch": "^3.0.0"
+  },
+  "type": "module"
+}
