@@ -2,14 +2,14 @@
   "manifest_version": 2,
   "name": "Bilkent STARS Enhancer",
   "description": "Helps with STARS-related inconveniences",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "icons": {
     "64": "icons/icon.png"
   },
   "content_scripts": [
     {
       "matches": [
-        "https://stars.bilkent.edu.tr/accounts/site/verifyEmail"
+        "https://stars.bilkent.edu.tr/accounts/auth/verifyEmail"
       ],
       "js": [
         "srs_login_2fa.js"
